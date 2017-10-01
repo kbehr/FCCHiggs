@@ -1,2 +1,20 @@
 \section{Event generation and selection}
-All events are generated with \textsc{Pythia~8.2}
+All events are generated with \textsc{Pythia~8.2} \cite{pythia82}. The expected beam energy spread at the FCC-ee (0.12\,\% on single beam, 0.17\,\% on center-of-mass energy) is considered at generator level. Jet clusteringis done using \textsc{FastJet} \cite{fastjet}.
+
+\subsection{Four-jet channel}
+To exclude events from the Z$^*/\gamma^* \rightarrow \mathrm{q\bar{q}}$ background, jets are formed with the anti-$k_T$ algorithm \cite{antikt_algo} with a minimum transverse momentum of 8\,GeV. If an event has at least four jets, the reconstructed particles are clustered into four jets using the $k_T$ algorithm \cite{kt_algo} in the exclusive mode. This is done because the further analysis requires four jets. Combining jets by hand was found  to be very prone to errors.
+Every jet is required to have at least five reconstructed particles,  at least one of which has to be a charged hadron. This rejects Z decays into pairs of $e$, $\mu$ or $\tau$. Decays into neutrinos are rejected by requiring the visible mass\footnote{The mass of an object whose four-momentum is the sum of the four momenta of all jets.} of an event to be bigger than 180\,GeV. Now the jet energies are rescaled so that the sum of their energies equals the center-of-mass energy of the event while keeping the directions fixed. 
+All rescaled energies have to be positive.
+To exclude fully hadronic ZZ or WW decays, both $\Delta_\mathrm{ZZ}$ and $\Delta_\mathrm{WW}$, defined as
+\begin{equation}
+\Delta_\mathrm{ZZ, WW} = \min_{i, j, k, l} [(m_{ij} - m_\mathrm{W, Z})^2 + (m_{kl} - m_\mathrm{W, Z})^2],
+\end{equation}
+have to be larger than 10\,GeV. Here, $i, j, k, l$ are the four jet indices. Throughout this thesis, $m_\mathrm{h} = 125\,$\,GeV, $m_\mathrm{W} = 80$\,GeV and  $m_\mathrm{Z} = 91$\,GeV have been used as theoretical values.
+
+A candidate Higgs boson is a jet pair with a mass $m_{12} > 100$\,GeV, whereas $m_{34}$ has to be between 80 and 110\,GeV. Both jets forming $m_{12}$ have to be b-tagged. If several combinations satisfy this condition, the one with the Higgs boson mass closest to 125\,GeV is taken. The Higgs boson mass is calculated as
+\begin{equation}
+  m_\mathrm{h} = m_{12} + m_{34} - m_\mathrm{Z}.
+\label{eq:higgsmass}
+\end{equation}
+This quantity has a slightly better resolution than $m_{12}$.
+The signal is fitted to the sum of a Breit-Wigner and a Gaussian function, the background to a third order polynomial.

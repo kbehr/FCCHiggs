@@ -9,7 +9,11 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 %\usepackage[pdftex]{hyperref}
-\usepackage{natbib}
+%\usepackage{natbib}
+% \usepackage[backend=biber,
+% 	style=bib/JHEP,
+% 	sorting=none
+% ]{biblatex}
 \usepackage{multirow}
 
 \def\bs{\boldsymbol}
@@ -72,7 +76,6 @@
 
 \bibliographystyle{JHEP}
 
-
 \title{Measuring Higgs Bosons Properties at the FCC-ee}
 
 \author{Janik von Ahnen, Janna Katharina Behr, Jonas Neundorf, Krisztian Peters}
@@ -92,6 +95,8 @@
 
 \input{sec-intro}
 
+\input{sec-selection}
 
+\bibliography{bib/fcch}
 
 \end{document}
