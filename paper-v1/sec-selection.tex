@@ -1,6 +1,6 @@
 \section{Event generation and selection}
 All events are generated with \textsc{Pythia~8.2} \cite{pythia82}. The expected beam energy spread at the FCC-ee (0.17\,\% on single beam, 0.12\,\% on center-of-mass energy) is considered by randomly variating $\sqrt{s}$ during the rescaling done in each analysis. Jet clustering is done using \textsc{FastJet} \cite{fastjet}.
-The event selection follows \cite{lep3-note}.
+The event selection follows \cite{lep3-note} and is implemented with the \textsc{heppy} framework \cite{heppy}, which contains the fast detector simulation \textsc{papas}.
 
 \subsection{Four-jet channel}
 To exclude events from the Z$^*/\gamma^* \rightarrow \mathrm{q\bar{q}}$ background, jets are formed with the anti-$k_T$ algorithm \cite{antikt_algo} with a minimum transverse momentum of 8\,GeV. If an event has at least four jets, the reconstructed particles are clustered into four jets using the $k_T$ algorithm \cite{kt_algo} in the exclusive mode. This is done because the further analysis requires four jets. Combining jets by hand was found  to be very prone to errors.
